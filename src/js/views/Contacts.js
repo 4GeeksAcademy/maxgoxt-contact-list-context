@@ -13,6 +13,7 @@ export const Contacts = () => {
 
 	useEffect(() => {
 		actions.getInfo();
+		// actions.addContact();
 	}, []);
 	console.log(store.contactos);
 
