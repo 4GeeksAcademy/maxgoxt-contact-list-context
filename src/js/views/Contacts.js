@@ -15,7 +15,6 @@ export const Contacts = () => {
 		actions.getInfo();
 		// actions.addContact();
 	}, []);
-	console.log(store.contactos);
 
 	return (
 		<div className="container">
@@ -27,8 +26,16 @@ export const Contacts = () => {
 				</p>
 				<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
 					<ul className="list-group pull-down" id="contact-list">
-						{/* {store.contactos.map(function(item, index) { */}
-						<ContactCard onDelete={() => setState({ showModal: true })} />;{/* })} */}
+						{store.contactos.map(item => (
+							<ContactCard
+								key={item.id}
+								name={item.full_name}
+								phone={item.phone}
+								address={item.address}
+								email={item.email}
+								onDelete={() => setState({ showModal: true })}
+							/>
+						))}
 					</ul>
 				</div>
 			</div>

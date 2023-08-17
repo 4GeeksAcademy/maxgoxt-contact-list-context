@@ -35,10 +35,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 						})
 					});
 					let data = await respuesta.json();
-					console.log(data);
-				} catch (error) {
-					console.log(error);
-				}
+				} catch (error) {}
 			}
 		}
 	};
