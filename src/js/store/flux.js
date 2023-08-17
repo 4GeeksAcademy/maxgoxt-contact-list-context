@@ -35,7 +35,13 @@ const getState = ({ getStore, setStore, getActions }) => {
 						})
 					});
 					let data = await respuesta.json();
-				} catch (error) {}
+				} catch (error) {
+					console.log(error);
+				}
+			},
+
+			delete: async function(){
+				
 			}
 		}
 	};
