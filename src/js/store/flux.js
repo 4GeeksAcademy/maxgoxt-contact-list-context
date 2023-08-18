@@ -40,8 +40,16 @@ const getState = ({ getStore, setStore, getActions }) => {
 				}
 			},
 
-			delete: async function(){
-				
+			delete: async function(id) {
+				try {
+					let respuesta = await fetch("https://playground.4geeks.com/apis/fake/contact/" +  id , {
+						method: "DELETE"
+					});
+					let data = await respuesta;
+					console.log(data);
+				} catch (error) {
+					console.log(error);
+				}
 			}
 		}
 	};

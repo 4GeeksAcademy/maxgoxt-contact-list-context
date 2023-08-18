@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const Modal = props => {
 	const [state, setState] = useState({
 		//initialize state here
 	});
 
-	function del(item) {
-		setToDo(toDo.filter((x, newIndex) => item != newIndex));
-	}
+	const { actions, store } = useContext(Context);
+
+	useEffect(() => {
+		console.log(actions.delete(store.contactos.id)); // ;
+		console.log(store.contactos);
+	}, []);
+
+	// function del(item) {
+	// 	setToDo(toDo.filter((x, newIndex) => item != newIndex));
+	// }
 
 	return (
 		<div className="modal" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
