@@ -70,7 +70,10 @@ export const AddContact = () => {
 					<button
 						onClick={() => {
 							actions.addContact(fullName, email, phone, address);
-							console.log(fullName, email, phone, address);
+							setAddress("");
+							setEmail("");
+							setFullName("");
+							setPhone("");
 						}}
 						type="button"
 						className="btn btn-primary form-control">

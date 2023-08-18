@@ -14,11 +14,6 @@ export const Modal = props => {
 		console.log(actions.delete(store.contactos.id));
 		console.log(store.contactos);
 	}, []);
-	console.log(props);
-
-	// function del(item) {
-	// 	setToDo(toDo.filter((x, newIndex) => item != newIndex));
-	// }
 
 	return (
 		<div className="modal" tabIndex="-1" role="dialog" style={{ display: props.show ? "inline-block" : "none" }}>
@@ -69,7 +64,7 @@ Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
 	show: PropTypes.bool,
-	id: PropTypes.string
+	id: PropTypes.number
 };
 
 /**

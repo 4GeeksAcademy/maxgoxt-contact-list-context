@@ -54,6 +54,28 @@ const getState = ({ getStore, setStore, getActions }) => {
 				} catch (error) {
 					console.log(error);
 				}
+			},
+
+			actualizar: async function(id, fullName, email, phone, address) {
+				try {
+					let respuesta = await fetch("https://playground.4geeks.com/apis/fake/contact/" + id, {
+						method: "PUT",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							full_name: fullName,
+							email: email,
+							agenda_slug: "maxgoxt",
+							address: address,
+							phone: phone
+						})
+					});
+					let data = await respuesta;
+					getActions().getInfo();
+				} catch (error) {
+					console.log(error);
+				}
 			}
 		}
 	};
