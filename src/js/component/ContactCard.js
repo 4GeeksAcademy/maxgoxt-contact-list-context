@@ -15,7 +15,7 @@ export const ContactCard = props => {
 		// console.log(store.contactos);
 	}, []);
 
-	console.log(props);
+	// console.log(props);
 
 	return (
 		<li className="list-group-item">

@@ -11,9 +11,10 @@ export const Modal = props => {
 	const { actions, store } = useContext(Context);
 
 	useEffect(() => {
-		console.log(actions.delete(store.contactos.id)); // ;
+		console.log(actions.delete(store.contactos.id));
 		console.log(store.contactos);
 	}, []);
+	console.log(props);
 
 	// function del(item) {
 	// 	setToDo(toDo.filter((x, newIndex) => item != newIndex));
@@ -45,7 +46,13 @@ export const Modal = props => {
 						<button type="button" className="btn btn-primary" onClick={() => props.onClose()}>
 							Oh no!
 						</button>
-						<button type="button" className="btn btn-secondary" data-dismiss="modal">
+						<button
+							type="button"
+							className="btn btn-secondary"
+							data-dismiss="modal"
+							onClick={() => {
+								props.onClose(), console.log("se borra el:" + props.id), actions.delete(props.id);
+							}}>
 							Do it!
 						</button>
 					</div>
@@ -61,7 +68,8 @@ export const Modal = props => {
 Modal.propTypes = {
 	history: PropTypes.object,
 	onClose: PropTypes.func,
-	show: PropTypes.bool
+	show: PropTypes.bool,
+	id: PropTypes.string
 };
 
 /**

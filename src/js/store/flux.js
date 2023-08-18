@@ -36,17 +36,21 @@ const getState = ({ getStore, setStore, getActions }) => {
 					});
 					let data = await respuesta.json();
 				} catch (error) {
+					[];
 					console.log(error);
 				}
 			},
 
 			delete: async function(id) {
 				try {
-					let respuesta = await fetch("https://playground.4geeks.com/apis/fake/contact/" +  id , {
-						method: "DELETE"
+					let respuesta = await fetch("https://playground.4geeks.com/apis/fake/contact/" + id, {
+						method: "DELETE",
+						headers: {
+							"Content-Type": "application/json"
+						}
 					});
 					let data = await respuesta;
-					console.log(data);
+					getActions().getInfo();
 				} catch (error) {
 					console.log(error);
 				}
