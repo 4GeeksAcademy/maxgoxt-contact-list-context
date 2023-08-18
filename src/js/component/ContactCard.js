@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 
 export const ContactCard = props => {
 	const [state, setState] = useState({

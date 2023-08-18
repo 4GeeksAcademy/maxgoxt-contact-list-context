@@ -49,7 +49,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 							"Content-Type": "application/json"
 						}
 					});
-					let data = await respuesta;
+					let data = await respuesta.json();
 					getActions().getInfo();
 				} catch (error) {
 					console.log(error);
@@ -71,7 +71,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 							phone: phone
 						})
 					});
-					let data = await respuesta;
+					let data = await respuesta.json();
 					getActions().getInfo();
 				} catch (error) {
 					console.log(error);

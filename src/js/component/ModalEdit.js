@@ -92,7 +92,7 @@ export const ModalEdit = props => {
 										}}
 									/>
 								</div>
-								<button
+								{/* <button
 									onClick={() => {
 										actions.actualizar(id, fullName, email, phone, address);
 									}}
@@ -102,7 +102,7 @@ export const ModalEdit = props => {
 								</button>
 								<Link className="mt-3 w-100 text-center" to="/">
 									or get back to contacts
-								</Link>
+								</Link> */}
 							</form>
 						</div>
 					</div>
@@ -115,7 +115,7 @@ export const ModalEdit = props => {
 							className="btn btn-secondary"
 							data-dismiss="modal"
 							onClick={() => {
-								props.onClose(), actions.actualizar(props.id, fullName, email, phone, address);
+								props.onClose(), actions.actualizar(id, fullName, email, phone, address);
 							}}>
 							Do it!
 						</button>
